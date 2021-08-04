@@ -1,0 +1,18 @@
+package com.springcloud;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+/**
+ * Created with IntelliJ IDEA.
+ *
+ * @Author: 许昊天
+ * @Date: 2021/08/03/11:26
+ * @Description:
+ */
+@SpringBootApplication
+public class PaymentMain8001 {
+    public static void main(String[] args) {
+        SpringApplication.run(PaymentMain8001.class, args);
+    }
+}
