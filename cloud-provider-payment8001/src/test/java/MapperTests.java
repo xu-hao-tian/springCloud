@@ -1,4 +1,4 @@
-import com.springcloud.Dao.PaymentDao;
+import com.springcloud.dao.PaymentDao;
 import com.springcloud.PaymentMain8001;
 import com.springcloud.entities.Payment;
 import org.junit.Test;
