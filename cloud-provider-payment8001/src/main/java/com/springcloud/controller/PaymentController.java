@@ -75,4 +75,19 @@ public class PaymentController {
             return new CommonResult(444, "没有对应记录, 查询Id: " + id);
         }
     }
+
+    @GetMapping("/payment/lb")
+    public String getPaymentLB(){
+        return serverPort;
+    }
+
+    @RequestMapping("/payment/feign/timeout")
+    public String timeOut() {
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return serverPort;
+    }
 }

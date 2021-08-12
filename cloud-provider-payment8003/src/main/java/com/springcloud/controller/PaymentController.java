@@ -29,8 +29,11 @@ public class PaymentController {
     @Resource
     private PaymentService paymentService;
 
+    /**
+     * springframework的DiscoveryClient（不要导错包了）
+     */
     @Resource
-    private DiscoveryClient discoveryClient;	//springframework的DiscoveryClient（不要导错包了）
+    private DiscoveryClient discoveryClient;
 
     @GetMapping("/payment/discovery")
     public Object discovery() {
@@ -74,5 +77,20 @@ public class PaymentController {
         } else {
             return new CommonResult(444, "没有对应记录, 查询Id: " + id);
         }
+    }
+
+    @GetMapping("/payment/lb")
+    public String getPaymentLB(){
+        return serverPort;
+    }
+
+    @RequestMapping("/payment/feign/timeout")
+    public String timeOut() {
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return serverPort;
     }
 }
